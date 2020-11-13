@@ -1,4 +1,5 @@
-from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QTableWidgetItem
+from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QTableWidgetItem, QGraphicsScene
+from PySide2.QtGui import QPen, QColor, QTransform
 from PySide2.QtCore import Slot
 from ui_mainwindow2 import Ui_MainWindow
 from particula import Particula
@@ -19,6 +20,32 @@ class MainWindow(QMainWindow):
         self.ui.actionGuardar.triggered.connect(self.actio_guardar_archivo)
         self.ui.Mostrar_Tabla_PushButton.clicked.connect(self.mostrar_tabla)
         self.ui.Buscar_Tabla_PushButton.clicked.connect(self.buscar_id)
+        self.ui.Dibujar_dibujo_pushButton.clicked.connect(self.Dibujar_part)
+        self.ui.Limpiar_dibujo_pushButton.clicked.connect(self.Limpiar_part)
+        self.scene = QGraphicsScene()
+        self.ui.graphicsView.setScene(self.scene)
+
+    @Slot()
+    def Dibujar_part(self):
+        for particula in self.administra:
+            pen = QPen()
+            pen.setWidth(2)
+            color = QColor(particula.red, particula.green, particula.blue)
+            pen.setColor(color)
+            self.scene.addEllipse(particula.origen_x, particula.origen_y, 3, 3, pen)
+            self.scene.addEllipse(particula.destino_x, particula.destino_y, 3, 3, pen)
+            self.scene.addLine(particula.origen_x + 3, particula.origen_y + 3, particula.destino_x, particula.destino_y, pen)
+
+    def wheelEvent(self, event):
+        if event.delta() > 0:
+            self.ui.graphicsView.scale(1.2, 1.2)
+        else:
+            self.ui.graphicsView.scale(0.8, 0.8)
+
+    @Slot()
+    def Limpiar_part(self):
+        self.scene.clear()
+
 
     @Slot()
     def buscar_id(self):
