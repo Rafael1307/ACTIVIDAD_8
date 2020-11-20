@@ -18,6 +18,9 @@ class MainWindow(QMainWindow):
         self.ui.Mostrar_pushButton.clicked.connect(self.click_mostrar)
         self.ui.actionAbrir.triggered.connect(self.actio_abrir_archivo)
         self.ui.actionGuardar.triggered.connect(self.actio_guardar_archivo)
+        self.ui.actionPor_ID.triggered.connect(self.Ordenar_ID)
+        self.ui.actionPor_Distancia.triggered.connect(self.Ordenar_Distancia)
+        self.ui.actionPor_Velocidad.triggered.connect(self.Ordenar_Velocida)
         self.ui.Mostrar_Tabla_PushButton.clicked.connect(self.mostrar_tabla)
         self.ui.Buscar_Tabla_PushButton.clicked.connect(self.buscar_id)
         self.ui.Dibujar_dibujo_pushButton.clicked.connect(self.Dibujar_part)
@@ -157,6 +160,18 @@ class MainWindow(QMainWindow):
                 "Error",
                 "No se pud crear el archivo " + ubicacion
             )
+
+    @Slot()
+    def Ordenar_ID(self):
+        self.administra.ordenar()
+
+    @Slot()
+    def Ordenar_Distancia(self):
+        self.administra.ordenar_distancia()
+
+    @Slot()
+    def Ordenar_Velocida(self):
+        self.administra.ordenar_velocidad()
 
     @Slot()
     def click_mostrar(self):

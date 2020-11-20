@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'mainwindow.ui'
+##
+## Created by: Qt User Interface Compiler version 5.15.1
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
@@ -12,6 +22,12 @@ class Ui_MainWindow(object):
         self.actionAbrir.setObjectName(u"actionAbrir")
         self.actionGuardar = QAction(MainWindow)
         self.actionGuardar.setObjectName(u"actionGuardar")
+        self.actionPor_ID = QAction(MainWindow)
+        self.actionPor_ID.setObjectName(u"actionPor_ID")
+        self.actionPor_Distancia = QAction(MainWindow)
+        self.actionPor_Distancia.setObjectName(u"actionPor_Distancia")
+        self.actionPor_Velocidad = QAction(MainWindow)
+        self.actionPor_Velocidad.setObjectName(u"actionPor_Velocidad")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_3 = QGridLayout(self.centralwidget)
@@ -209,14 +225,20 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QRect(0, 0, 594, 21))
         self.menuArchivo = QMenu(self.menubar)
         self.menuArchivo.setObjectName(u"menuArchivo")
+        self.menuOrdenar = QMenu(self.menubar)
+        self.menuOrdenar.setObjectName(u"menuOrdenar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
         self.menubar.addAction(self.menuArchivo.menuAction())
+        self.menubar.addAction(self.menuOrdenar.menuAction())
         self.menuArchivo.addAction(self.actionAbrir)
         self.menuArchivo.addAction(self.actionGuardar)
+        self.menuOrdenar.addAction(self.actionPor_ID)
+        self.menuOrdenar.addAction(self.actionPor_Distancia)
+        self.menuOrdenar.addAction(self.actionPor_Velocidad)
 
         self.retranslateUi(MainWindow)
 
@@ -236,6 +258,9 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.actionGuardar.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+D", None))
 #endif // QT_CONFIG(shortcut)
+        self.actionPor_ID.setText(QCoreApplication.translate("MainWindow", u"Por ID", None))
+        self.actionPor_Distancia.setText(QCoreApplication.translate("MainWindow", u"Por Distancia", None))
+        self.actionPor_Velocidad.setText(QCoreApplication.translate("MainWindow", u"Por Velocidad", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Particulas", None))
         self.AgInicio_pushButton.setText(QCoreApplication.translate("MainWindow", u"Agregar Inicio", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Velocidad:", None))
@@ -259,5 +284,6 @@ class Ui_MainWindow(object):
         self.Limpiar_dibujo_pushButton.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Dibujar", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
+        self.menuOrdenar.setTitle(QCoreApplication.translate("MainWindow", u"Ordenar", None))
     # retranslateUi
 

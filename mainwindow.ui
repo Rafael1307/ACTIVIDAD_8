@@ -266,7 +266,16 @@
     <addaction name="actionAbrir"/>
     <addaction name="actionGuardar"/>
    </widget>
+   <widget class="QMenu" name="menuOrdenar">
+    <property name="title">
+     <string>Ordenar</string>
+    </property>
+    <addaction name="actionPor_ID"/>
+    <addaction name="actionPor_Distancia"/>
+    <addaction name="actionPor_Velocidad"/>
+   </widget>
    <addaction name="menuArchivo"/>
+   <addaction name="menuOrdenar"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAbrir">
@@ -283,6 +292,21 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionPor_ID">
+   <property name="text">
+    <string>Por ID</string>
+   </property>
+  </action>
+  <action name="actionPor_Distancia">
+   <property name="text">
+    <string>Por Distancia</string>
+   </property>
+  </action>
+  <action name="actionPor_Velocidad">
+   <property name="text">
+    <string>Por Velocidad</string>
    </property>
   </action>
  </widget>

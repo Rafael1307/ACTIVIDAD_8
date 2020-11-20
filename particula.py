@@ -79,3 +79,6 @@ class Particula:
             "green": self.__green,
             "blue": self.__blue
         }
+
+    def __lt__(self, other):
+        return self.ide < other.ide
